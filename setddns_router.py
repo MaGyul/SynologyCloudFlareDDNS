@@ -13,7 +13,9 @@ if "[Cloudflare]" not in data:
         data += "[Cloudflare]\n"
         data += "        modulepath=/usr/syno/bin/ddns/cloudflare.php\n"
         data += "        queryurl=https://www.cloudflare.com/"
-        with oprn("/etc.defaults/ddns_provider.conf", "w") as configFile:
+        with open("/etc.defaults/ddns_provider.conf", "w") as configFile:
+                print("write data: ")
+                print(data)
                 configFile.write(data)
                 print("write complete")
 else:
