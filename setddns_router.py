@@ -5,7 +5,7 @@ url = 'https://raw.githubusercontent.com/namukcom/SynologyCloudflareDDNS/master/
 target_file = '/usr/syno/bin/ddns/cloudflare.php'
 
 with open("/etc.defaults/ddns_provider.conf", "rw") as configFile:
-        data = configFile.read()
+        data = configFile.read().trim()
         if "[Cloudflare]" not in data:
                 print("no data")
                 data += "[Cloudflare]\n"
