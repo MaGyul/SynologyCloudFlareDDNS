@@ -2,7 +2,7 @@ import configparser
 import urllib.request
 import os, stat
 
-url = 'https://raw.githubusercontent.com/namukcom/SynologyCloudflareDDNS/master/cloudflare.php'
+url = 'https://raw.githubusercontent.com/MaGyul/SynologyCloudFlareDDNS/master/cloudflare.php'
 target_file = '/usr/syno/bin/ddns/cloudflare.php'
 
 config= configparser.ConfigParser()
@@ -13,7 +13,7 @@ try:
 except KeyError:
         config['Cloudflare']= {}
 
-config['Cloudflare']['modulepath'] = '/usr/syno/bin/ddns/cloudflare.php'
+config['Cloudflare']['modulepath'] = target_file
 config['Cloudflare']['queryurl'] = 'https://www.cloudflare.com/'
 
 with open('/etc.defaults/ddns_provider.conf', 'w') as configfile:
